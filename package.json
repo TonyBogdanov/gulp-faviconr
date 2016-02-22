@@ -1,0 +1,26 @@
+{
+  "name": "gulp-faviconr",
+  "version": "1.0.0",
+  "description": "Gulp wrapper for https://github.com/TonyBogdanov/faviconr 's generate method",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonyBogdanov/gulp-faviconr.git"
+  },
+  "keywords": [
+    "faviconr",
+    "gulp",
+    "gulpplugin",
+    "favicons"
+  ],
+  "author": "Tony Bogdanov <tonybogdanov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TonyBogdanov/gulp-faviconr/issues"
+  },
+  "homepage": "https://github.com/TonyBogdanov/gulp-faviconr#readme",
+  "dependencies": {
+    "faviconr": "github:tonybogdanov/faviconr",
+    "shelljs": "^0.6.0"
+  }
+}
