@@ -1,6 +1,5 @@
+var path                    = require('path');
 var shell                   = require('shelljs');
-
-const PLUGIN_NAME           = 'gulp-faviconr';
 
 function gulpFaviconr(options)
 {
@@ -22,20 +21,12 @@ function gulpFaviconr(options)
         }
     }
 
-    return through.obj(function(file, enc, cb) {
-        //if (file.isNull()) {
-        //    // return empty file
-        //    return cb(null, file);
-        //}
-        //if (file.isBuffer()) {
-        //    file.contents = Buffer.concat([prefixText, file.contents]);
-        //}
-        //if (file.isStream()) {
-        //    file.contents = file.contents.pipe(prefixStream(prefixText));
-        //}
+    var originalCWD         = process.cwd();
 
-        cb(null, file);
-    });
+    shell.cd(actualOptions.cwd);
+    shell.exec('php "' + path.resolve(require.resolve('faviconr'), '../../build/faviconr.phar') + '" generate "' +
+        actualOptions.json + '"' + (0 < actualOptions.cmd.length ? ' ' + actualOptions.cmd : ''));
+    shell.cd(originalCWD);
 }
 
 module.exports              = gulpFaviconr;

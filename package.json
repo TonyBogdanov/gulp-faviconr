@@ -21,6 +21,7 @@
   "homepage": "https://github.com/TonyBogdanov/gulp-faviconr#readme",
   "dependencies": {
     "faviconr": "github:tonybogdanov/faviconr",
+    "path": "^0.12.7",
     "shelljs": "^0.6.0"
   }
 }
